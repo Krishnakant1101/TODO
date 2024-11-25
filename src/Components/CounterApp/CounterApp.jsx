@@ -1,11 +1,11 @@
 import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from "@mui/material/Typography";
-import { Decrement, Increment } from '../CounterSlice/CounterSlice';
+import { Decrement, Increment } from '../TodoCounterSlice/TodoCounterSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 function CounterApp() {
-    const countValue = useSelector((state) => state.count.count);
+    const countValue = useSelector((state) => state.Data.count);
      // Get count value from Redux store
     const Dispatch = useDispatch();
 
