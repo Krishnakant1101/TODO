@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TodoForm from '../TodoForm/TodoForm';
 import ShowTodoList from '../ShowTodoList/ShowTodoList';
+import TodoThreeStages from '../TodoThreeStages/TodoThreeStages'
 import './TodoApp.css'
 
 const style = {
@@ -40,7 +41,7 @@ export default function TodoApp() {
         </Box>
       </Modal>
 
-      <ShowTodoList/>
+      <TodoThreeStages/>
       </div>
     </div>
     

@@ -7,19 +7,20 @@ import { CreateNewTask } from "../TodoCounterSlice/TodoCounterSlice";
 const TodoForm = ({ setOpen }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Create the data object
+    // Create the task object
     const todoData = {
-      id:nanoid, // Unique ID for the task
+      id: nanoid(), // Generate a unique ID for the task
       title,
       description,
+      stage: "todo", // Default stage for new tasks
     };
 
-    // Pass the object to the parent
+    // Dispatch the action to create a new task
     dispatch(CreateNewTask(todoData));
 
     // Clear the form fields
@@ -64,6 +65,7 @@ const TodoForm = ({ setOpen }) => {
         onChange={(e) => setDescription(e.target.value)}
         multiline
         rows={3}
+        required
       />
       <Button type="submit" variant="contained" color="primary" fullWidth>
         SUBMIT
